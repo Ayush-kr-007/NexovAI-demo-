@@ -24,6 +24,7 @@ from database import init_db, save_lead_to_db
 
 
 async def bot(runner_args: RunnerArguments):
+    init_db()
     transport = await create_transport(
         runner_args,
         {

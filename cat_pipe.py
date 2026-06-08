@@ -207,7 +207,14 @@ if __name__ == "__main__":
     init_db()
 
     from pipecat.runner.run import main
-    main()
+    import asyncio
+    from pipecat.runner.run import main as pipecat_main
+
+    if __name__ == "__main__":
+        os.environ["HOST"] = "0.0.0.0"
+        os.environ["PORT"] = os.getenv("PORT", "10000")
+
+        asyncio.run(pipecat_main())
 
 # if __name__ == "__main__":
 #     from pipecat.runner.run import main

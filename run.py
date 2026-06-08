@@ -1,7 +1,7 @@
 import asyncio
 import os
 from database import init_db
-from cat_pipe import bot
+from main import bot
 from pipecat.runner.run import main as pipecat_main
 
 if __name__ == "__main__":
@@ -11,6 +11,6 @@ if __name__ == "__main__":
     os.environ["PORT"] = os.getenv("PORT", "10000")
 
     # IMPORTANT: ensure bot is discoverable
-    os.environ["PIPECAT_BOT"] = "cat_pipe:bot"
+    os.environ["PIPECAT_BOT"] = "main:bot"
 
     asyncio.run(pipecat_main())

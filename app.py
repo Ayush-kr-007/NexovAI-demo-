@@ -1,6 +1,8 @@
 import streamlit as st
 import sqlite3
+from pymongo import MongoClient
 import pandas as pd
+import os
 
 st.set_page_config(
     page_title="NexovAI Dashboard",
@@ -9,11 +11,15 @@ st.set_page_config(
 )
 
 # Database
-conn = sqlite3.connect("leads.db")
-df = pd.read_sql_query(
-    "SELECT * FROM leads",
-    conn
+client = MongoClient(os.getenv("MONGO_URI"))
+
+db = client["nexovai"]
+
+leads = list(
+    db["leads"].find({}, {"_id": 0})
 )
+
+df = pd.DataFrame(leads)
 
 st.title("📞 NexovAI Lead Dashboard")
 

@@ -1,6 +1,5 @@
 venv/
 __pycache__/
 .env
-leads.db
-lead.json
-*.wav
+*.db
+*.json

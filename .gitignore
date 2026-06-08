@@ -1,5 +1,5 @@
 venv/
-__pycache__/
 .env
-*.db
-*.json
+__pycache__/
+*.pyc
+leads.db

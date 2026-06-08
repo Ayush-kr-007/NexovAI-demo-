@@ -103,7 +103,7 @@ if page == "Call Lead":
 
             st.link_button(
                 "Launch AI Caller",
-                "https://nexovai-demo-production.up.railway.app/"
+                "http://localhost:7860/client/"
             )
 
         else:

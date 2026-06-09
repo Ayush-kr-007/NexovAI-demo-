@@ -10,7 +10,7 @@ if __name__ == "__main__":
     port = os.getenv("PORT", "10000")
 
     sys.argv.extend([
-        "--host", "0.0.0.0",
+        "--host", "localhost",
         "--port", port
     ])
 

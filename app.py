@@ -103,7 +103,7 @@ if page == "Call Lead":
 
             st.link_button(
                 "Launch AI Caller",
-                "http://localhost:7860/client/"
+                "http://localhost:10000/client/"
             )
 
         else:
